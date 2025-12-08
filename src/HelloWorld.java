@@ -35,12 +35,15 @@ public class HelloWorld {
 //            }
 ////        }
 //            System.out.println("high score: " + highScore);
-            int score = 51000;
-            if (score <= 5000) {
+            int score = 4000;
+            if (score <= 5000 && score >= 1000) {
+                System.out.println("Good");
+            } else if (score < 1000) {
                 System.out.println("not bad");
             } else {
-                System.out.println("you got it");
+                System.out.println("Great");
+            }
             }
         }
-    }
+
 
