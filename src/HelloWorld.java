@@ -17,12 +17,16 @@ public class HelloWorld {
 //        String makeFun = "amir";
 //        boolean isPerson = makeFun == "amir" ? false : true;
 //        System.out.print("isPerson: " + isPerson);
-          double numberOne = 20.00;
-          double numberTwo = 80.00;
-          double multyTwoNumber = numberOne + numberTwo * 100.00;
-
-          if (multyTwoNumber == 0.00) {
-             System.out.println("True");
+          double numberOne = 20.00d;
+          double numberTwo = 80.00d;
+          double multyTwoNumber = (numberOne + numberTwo) * 100.00d;
+          System.out.println("MyTotalValue: " + multyTwoNumber);
+          double theReminder = multyTwoNumber % 40.00d;
+          System.out.println("theReminder: " + theReminder);
+          boolean isNoReminder = (theReminder == 0) ? true : false;
+          System.out.println("isNoReminder: " + isNoReminder);
+          if (!isNoReminder) {
+             System.out.println("Got some reminder");
         }
     }
 }
