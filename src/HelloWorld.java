@@ -27,8 +27,6 @@ public class HelloWorld {
 //          System.out.println("isNoReminder: " + isNoReminder);
 //          if (!isNoReminder) {
 //             System.out.println("Got some reminder");
-           
-//        }
-            System.out.println("high score: " + highScore);
+
     }
 }
