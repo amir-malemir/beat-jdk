@@ -1,50 +1,29 @@
 public class MainChallenge {
 
     public static void main(String[] args){
-//        System.out.print("Hello world");
-////        and or
-//        boolean is_active = false;
-//        if (is_active == false) {
-//            System.out.print("active");
-//        int topscore = 99;
-//
-//        if (topscore < 100 && is_active == true){
-//            System.out.println("smaller than topscore");
-//        }
-//        if (topscore > 100 || !is_active){
-//            System.out.println("smaller than topscore");
-//        }
-//        String makeFun = "amir";
-//        boolean isPerson = makeFun == "amir" ? false : true;
-//        System.out.print("isPerson: " + isPerson);
-//          double numberOne = 20.00d;
-//          double numberTwo = 80.00d;
-//          double multyTwoNumber = (numberOne + numberTwo) * 100.00d;
-//          System.out.println("MyTotalValue: " + multyTwoNumber);
-//          double theReminder = multyTwoNumber % 40.00d;
-//          System.out.println("theReminder: " + theReminder);
-//          boolean isNoReminder = (theReminder == 0) ? true : false;
-//          System.out.println("isNoReminder: " + isNoReminder);
-//          if (!isNoReminder) {
-//             System.out.println("Got some reminder");
-//            int highScore = 1025;
-//            int health = 100;
-//            if ((health > 25) && (highScore > 1000)) {
-//                highScore = highScore - 1000;
-//                highScore--;
-//            }
-////        }
-//            System.out.println("high score: " + highScore);
-            int score = 4000;
-            if (score <= 5000 && score >= 1000) {
-                System.out.println("Good");
-            } else if (score < 1000) {
-                System.out.println("not bad");
-            } else {
-                System.out.println("Great");
-            }
-//            good for this night
-            }
+        boolean gameOver = true;
+        int score = 8000;
+        int levelCompleted = 8;
+        int bonus = 200;
+
+        int finalScore = score;
+
+        CalcScore(true, 500, 12, 20);
+        if (gameOver){
+            finalScore += (levelCompleted * bonus);
+            System.out.println("Your final score is " + finalScore);
+        }
+    }
+    public static void CalcScore( boolean gameOver, int score, int levelCompleted, int bonus ) {
+
+        int finalScore = score;
+
+
+        if (gameOver){
+            finalScore += (levelCompleted * bonus);
+            System.out.println("Your final score from method is " + finalScore);
+        }
+    }
         }
 
 
