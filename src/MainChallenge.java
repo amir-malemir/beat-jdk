@@ -46,16 +46,16 @@ public class MainChallenge {
         System.out.println(name + "s stage --> " + results);
     }
     public static int calcHighScorePosition(int score){
-
+        int position = 4;
         if (score >= 1000) {
-                return 1;
-        } else if (score < 1000 && score >= 500) {
-            return 2;
-        } else if (score < 500 && score >= 100 ) {
-            return 3;
-        } else {
-            return  4;
+                position = 1;
+        } else if (score >= 500) {
+            position = 2;
+        } else if (score >= 100 ) {
+            position = 3;
         }
+        return position;
+
     }
 }
 
