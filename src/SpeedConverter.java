@@ -1,7 +1,7 @@
 public class SpeedConverter {
     public static void main(String[] args){
 
-    convertToMile(2);
+    System.out.println("output is : " + convertToMile(1.5));
     }
     public static double convertToMile(double kilometers){
         if (kilometers < 0){
