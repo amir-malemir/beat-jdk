@@ -1,13 +1,14 @@
 public class Exercise {
     public static void main(String[] args){
-        mbConverter(10);
+        mbConverter(1048);
     }
-    public static long mbConverter(float mb){
+    public static void mbConverter(int mb){
 
-        if (mb < 0){
-            return -1;
+        if (mb <= 0){
+            System.out.println("Zero");
         }
-        int megaBytes
+        System.out.print("your value is " + mb / 1024 + "mb + remaining is " + mb % 1024 );
+
 
     }
 }
