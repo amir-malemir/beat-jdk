@@ -9,11 +9,12 @@ public class FanapExercise {
 //        return firstRounded == secondRounded;
 //    }
     public static boolean equalSumChecker(int first, int second, int value){
-        int sumNumbers = first + second;
-        if (sumNumbers == value) {
-            return true;
-        }
-        return false;
+//        int sumNumbers = first + second;
+//        if (sumNumbers == value) {
+//            return true;
+//        }
+//        return false;
+        return (first + second) == value;
     }
 
 
