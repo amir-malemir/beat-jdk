@@ -34,15 +34,16 @@ public class FanapExercise {
 
     public static String convertMin(int second){
         int minutes = second / 60;
-        int hours = minutes / 60;
-        System.out.println("hours: " + hours );
-
-        int remainingMinutes = minutes % 60;
-        System.out.println("remaining minutes: " + remainingMinutes );
-
-        int remainingSeconds = second % 60;
-        System.out.println("remaining seconds: " + remainingSeconds );
-        return hours + "h " + remainingMinutes + "m " + remainingSeconds + "s" ;
+        return convertMin(minutes, second);
+//        int hours = minutes / 60;
+//        System.out.println("hours: " + hours );
+//
+//        int remainingMinutes = minutes % 60;
+//        System.out.println("remaining minutes: " + remainingMinutes );
+//
+//        int remainingSeconds = second % 60;
+//        System.out.println("remaining seconds: " + remainingSeconds );
+//        return hours + "h " + remainingMinutes + "m " + remainingSeconds + "s" ;
     }
     public static String convertMin(int minutes, int second){
         int hours = minutes / 60;
