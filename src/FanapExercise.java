@@ -5,8 +5,8 @@ public class FanapExercise {
 //        System.out.println("out: " + teenNumberChecker(1,20,27) );
 //        System.out.println("5ft, 8in = " + convertCM(5,8) + "cm");
 //        System.out.println("68in = " + convertCM(68) + "cm");
-        System.out.println("min is: " + convertMin(3699));
-        System.out.println("min and sec is: " + convertMin(2, 5));
+        System.out.println("time is: " + convertMin(3945));
+        System.out.println("time is: " + convertMin(65, 45));
     }
 //    public static boolean decimalPlace(double first, double second){
 //        long firstRounded = (long) first * 1000;
@@ -44,8 +44,11 @@ public class FanapExercise {
         System.out.println("remaining seconds: " + remainingSeconds );
         return hours + "h " + remainingMinutes + "m " + remainingSeconds + "s" ;
     }
-    public static int convertMin(int min, int sec){
-        return min/60 * sec;
+    public static String convertMin(int minutes, int second){
+        int hours = minutes / 60;
+        int remainingMinutes = minutes % 60;
+        int remainingSeconds = second % 60;
+        return hours + "h " + remainingMinutes + "m " + remainingSeconds + "s" ;
     }
 
 }
