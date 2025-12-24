@@ -5,8 +5,8 @@ public class FanapExercise {
 //        System.out.println("out: " + teenNumberChecker(1,20,27) );
 //        System.out.println("5ft, 8in = " + convertCM(5,8) + "cm");
 //        System.out.println("68in = " + convertCM(68) + "cm");
-        System.out.println("time is: " + convertMin(3945));
-        System.out.println("time is: " + convertMin(65, 45));
+//        System.out.println("time is: " + convertMin(3945));
+//        System.out.println("time is: " + convertMin(65, 45));
     }
 //    public static boolean decimalPlace(double first, double second){
 //        long firstRounded = (long) first * 1000;
@@ -32,9 +32,9 @@ public class FanapExercise {
 //        return ((feet * 12) + inch) * 2.54;
 //    }
 
-    public static String convertMin(int second){
-        int minutes = second / 60;
-        return convertMin(minutes, second);
+//    public static String convertMin(int second){
+//        int minutes = second / 60;
+//        return convertMin(minutes, second);
 //        int hours = minutes / 60;
 //        System.out.println("hours: " + hours );
 //
@@ -44,12 +44,26 @@ public class FanapExercise {
 //        int remainingSeconds = second % 60;
 //        System.out.println("remaining seconds: " + remainingSeconds );
 //        return hours + "h " + remainingMinutes + "m " + remainingSeconds + "s" ;
-    }
-    public static String convertMin(int minutes, int second){
-        int hours = minutes / 60;
-        int remainingMinutes = minutes % 60;
-        int remainingSeconds = second % 60;
-        return hours + "h " + remainingMinutes + "m " + remainingSeconds + "s" ;
-    }
+//    }
+//    public static String convertMin(int minutes, int second){
+//        int hours = minutes / 60;
+//        int remainingMinutes = minutes % 60;
+//        int remainingSeconds = second % 60;
+//        return hours + "h " + remainingMinutes + "m " + remainingSeconds + "s" ;
+//    }
 
+    private static final int invalid_value = -1;
+
+    public static double area(double radius){
+        if (radius < 0){
+            return invalid_value;
+        }
+        return radius * radius * Math.PI;
+    }
+    public static double area(double x, double y){
+        if (x < 0 || y < 0){
+            return  invalid_value;
+        }
+        return x * y;
+    }
 }
