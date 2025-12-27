@@ -13,6 +13,7 @@ public class FanapExercise {
 //        System.out.println("time is: " + convertMin(3945));
 //        System.out.println("time is: " + convertMin(65, 45));
 //        System.out.println("area calc is : " + area(5.0, 4.0));
+        eqaulityPrinter(1, 1, 1);
 
     }
 //    public static boolean decimalPlace(double first, double second){
@@ -84,6 +85,10 @@ public class FanapExercise {
 //    }
 
     public static void eqaulityPrinter(int number1, int number2, int number3){
-
+        if (number1 == number2 && number2 == number3){
+            System.out.println("All number are equal! " + number1);
+        }else {
+            System.out.println("Not Equal");
+        }
     }
 }
