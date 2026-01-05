@@ -1,6 +1,6 @@
 public class Bankoss {
     public static void main(String[] args){
-        approvalStatus(1, "NOT_CONFIRM", 5);
+        approvalStatus(2, "NOT_CONFIRM", 55);
 //        status --> "CONFIRM" / "NOT_CONFIRM" / "EXPIRED" / "REJECT"
 //        userRole --> 1 (admin) / --> 2 (client)
 
@@ -9,6 +9,7 @@ public class Bankoss {
         String status = newStatus;
         int userRole = newUserRole;
         int date = newDate;
+        System.out.println("database field updated. (" + "status: " + status + " , user role: " + userRole + " , date: " + date + ")");
     }
     public static void approvalStatus(int userRole, String status, int date){
         int today = 10;
@@ -27,7 +28,7 @@ public class Bankoss {
             }else {
                 System.out.println("request needs to confirm");
             }
-        }else {
+        }else if (userRole == 2){
             if (statusValue == "NOT_CONFIRM" && date > today){
                 databaseField("EXPIRED", userRole, date);
                 System.out.println("request is expired");
