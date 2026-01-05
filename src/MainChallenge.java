@@ -33,38 +33,48 @@ public class MainChallenge {
 //    }
 
     public static void main(String[] args){
-        displayHighScorePosition("Amir", 300);
-        displayHighScorePosition("Ali", 700);
-        displayHighScorePosition("Mmd", 1000);
+//        displayHighScorePosition("Amir", 300);
+//        displayHighScorePosition("Ali", 700);
+//        displayHighScorePosition("Mmd", 1000);
+        System.out.println(getMonths("april"));
     }
 
-    public static void displayHighScorePosition(String name, int score){
-
-
-        int results = 0;
-        results = calcHighScorePosition(score);
-        System.out.println(name + "s stage --> " + results);
-    }
-    public static int calcHighScorePosition(int score){
-        int position = 4;
-        if (score >= 1000) {
-                position = 1;
-        } else if (score >= 500) {
-            position = 2;
-        } else if (score >= 100 ) {
-            position = 3;
-        }
-        return position;
-
-    }
-    public static void PosNegZero(int number){
-        if (number < 0) {
-            System.out.println("negative");
-        } else if (number > 0){
-            System.out.println("Positive");
-        } else {
-            System.out.println("Zero");
-        }
+//    public static void displayHighScorePosition(String name, int score){
+//
+//
+//        int results = 0;
+//        results = calcHighScorePosition(score);
+//        System.out.println(name + "s stage --> " + results);
+//    }
+//    public static int calcHighScorePosition(int score){
+//        int position = 4;
+//        if (score >= 1000) {
+//                position = 1;
+//        } else if (score >= 500) {
+//            position = 2;
+//        } else if (score >= 100 ) {
+//            position = 3;
+//        }
+//        return position;
+//
+//    }
+//    public static void PosNegZero(int number){
+//        if (number < 0) {
+//            System.out.println("negative");
+//        } else if (number > 0){
+//            System.out.println("Positive");
+//        } else {
+//            System.out.println("Zero");
+//        }
+//    }
+    public static String getMonths(String month){
+        return switch (month){
+            case "january", "february", "march" -> "1st";
+            case "april", "may", "june" -> "2nd";
+            case "july", "august", "september" -> "3rd";
+            case "october", "november", "december" -> "4st";
+            default -> "error";
+        };
     }
 }
 
