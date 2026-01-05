@@ -1,4 +1,4 @@
-public class main {
+public class main1 {
     public static void main(String[] args){
 //        int value = 2;
 //        if (value == 1){
@@ -49,12 +49,12 @@ public class main {
         }
     }
     public static String getMonth(String month){
-        switch (month){
-            case "january", "february", "march" -> return "1st";
-            case "april", "may", "june" -> return "2nd";
-            case "july", "august", "september" -> return "3rd";
-            case "october", "november", "december" -> return "4st";
-
+        return switch (month){
+            case "january", "february", "march" -> "1st";
+            case "april", "may", "june" -> "2nd";
+            case "july", "august", "september" -> "3rd";
+            case "october", "november", "december" -> "4st";
+            default -> "error";
         }
     }
 }
