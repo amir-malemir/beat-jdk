@@ -8,15 +8,20 @@ public class main {
 //        }else {
 //            System.out.println("value is not 1 or 2");
 //        }
+//        switch (value){
+//            case 1:
+//                System.out.println("was 1");
+//                break;
+//            case 2:
+//                System.out.println("was 2");
+//                break;
+//            default:
+//                System.out.println("was not 1 || 2");
+//        }
         switch (value){
-            case 1:
-                System.out.println("was 1");
-                break;
-            case 2:
-                System.out.println("was 2");
-                break;
-            default:
-                System.out.println("was not 1 || 2");
+            case 1 -> System.out.println("1");
+            case 2-> System.out.println("2");
+            default -> System.out.println("was no 1,2");
         }
 
     }
