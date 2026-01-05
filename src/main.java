@@ -11,8 +11,10 @@ public class main {
         switch (value){
             case 1:
                 System.out.println("was 1");
+                break;
             case 2:
                 System.out.println("was 2");
+                break;
             default:
                 System.out.println("was not 1 || 2");
         }
