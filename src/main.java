@@ -1,6 +1,6 @@
 public class main {
     public static void main(String[] args){
-        int value = 2;
+//        int value = 2;
 //        if (value == 1){
 //            System.out.println("value is 1");
 //        } else if (value == 2) {
@@ -18,11 +18,35 @@ public class main {
 //            default:
 //                System.out.println("was not 1 || 2");
 //        }
-        switch (value){
-            case 1 -> System.out.println("1");
-            case 2-> System.out.println("2");
-            default -> System.out.println("was no 1,2");
+//        switch (value){
+//            case 1 -> System.out.println("1");
+//            case 2-> System.out.println("2");
+//            default -> System.out.println("was no 1,2");
+//        }
+        String month = "april";
+        switch (month){
+            case "january":
+            case "february":
+            case "march":
+                System.out.println("1st");
+                break;
+            case "april":
+            case "may":
+            case "june":
+                System.out.println("2nd");
+                break;
+            case "july":
+            case "august":
+            case "september":
+                System.out.println("3rd");
+                break;
+            case "october":
+            case "november":
+            case "december":
+                System.out.println("4st");
+
         }
+
 
     }
 }
