@@ -2,23 +2,23 @@ interface CheckRequest{
     public void customerApporval(int userRole, String status, int date, int today);
     public void managerApporval(int userRole, String status, int date, int today);
     public void database(int userRole, String status, int date);
-    public String expireChecker(boolean check);
+    public String expireChecker(int date, int today);
 }
 class RequestChecker implements CheckRequest{
     public void doProcess(int userRole, String status, int date, int today){
-        if (userRole == 1){
+//        System.out.println(userRole+status);
+        if (userRole == 2){
             customerApporval(userRole, status, date, today);
-        }else{
+        }else if (userRole == 1){
             managerApporval(userRole, status, date, today);
         }
     }
     public void customerApporval(int userRole, String status, int date, int today) {
         if (date > today){
-            System.out.println(userRole+status);
             switch (userRole + status) {
                 case "2NOT_CONFIRM": database(userRole, status, date); break;
                 case "2EXPIRED": System.out.println("request is expired"); break;
-                case "2CONFIRM": System.out.println(expireChecker(true));
+                case "2CONFIRM": System.out.println(expireChecker(date, today));
                 default: System.out.println("wrong information");
             }
         }
@@ -42,7 +42,7 @@ class RequestChecker implements CheckRequest{
         status = "EXPIRED";
         System.out.println("your request " + status + " (" +  date + ")");
     }
-    public String expireChecker(boolean check){
+    public String expireChecker(int date, int today) {
         return "your service approved but your status is expired for now :(, contact us";
     }
 }
