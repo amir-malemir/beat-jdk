@@ -6,7 +6,6 @@ interface CheckRequest{
 }
 class RequestChecker implements CheckRequest{
     public void doProcess(int userRole, String status, int date, int today){
-//        System.out.println(userRole+status);
         if (userRole == 2){
             customerApporval(userRole, status, date, today);
         }else if (userRole == 1){
@@ -18,24 +17,35 @@ class RequestChecker implements CheckRequest{
             switch (userRole + status) {
                 case "2NOT_CONFIRM": database(userRole, status, date); break;
                 case "2EXPIRED": System.out.println("request is expired"); break;
-                case "2CONFIRM": System.out.println(expireChecker(date, today));
+                case "2CONFIRM": System.out.println(expireChecker(date, today)); break;
                 default: System.out.println("wrong information");
             }
         }
     }
     public void managerApporval(int userRole, String status, int date, int today) {
         if (date > today){
-            switch (userRole + status) {
-                case "1NOT_CONFIRM" : System.out.println("request is expired"); break;
-                case "1EXPIRED" : System.out.println("expired, pls check date");
-                default: System.out.println("wrong information");
+                    switch (userRole + status) {
+                        case "1NOT_CONFIRM":
+                            throw new RuntimeException("Expired");
+                        case "1EXPIRED":
+                            System.out.println("expired, pls check date");
+                        case "1CONFIRM":
+                            System.out.println(expireChecker(date, today));
+                            break;
+                    }
+
+        }else{
+            try {
+                switch (userRole + status) {
+                    case "1CONFIRM" :
+                        System.out.println("request sent, ticket completed"); break;
+                    case "1REJECT" :
+                        System.out.println("request rejected");
+                }
+            } catch (Exception e){
+                System.out.println("wrong information");
             }
-        }else {
-            switch (userRole + status) {
-                case "1CONFIRM" : System.out.println("request sent, ticket completed"); break;
-                case "1REJECT" :  System.out.println("request rejected");
-                default: System.out.println("wrong information");
-            }
+
         }
     }
     public void database(int userRole, String status, int date) {
@@ -65,12 +75,10 @@ class Main{
     }
     public static void main(String[] args) {
         //   enum status : C -> "CONFIRM" / NC -> "NOT_CONFIRM" / E -> "EXPIRED" / R -> "REJECT"
-        status myStatus = status.C;
-//        System.out.println(myStatus.getStatusValue());
+        status myStatus = status.NC;
+        //        userRole --> 1 (admin) / --> 2 (client)
         RequestChecker myRequest = new RequestChecker();
-        myRequest.doProcess(2, myStatus.getStatusValue(), 50, 10);
-//        myRequest.doProcess(1, "CONFIRM", 10, 10);
-
+        myRequest.doProcess(1, myStatus.getStatusValue(), 50, 10);
     }
 }
-//        userRole --> 1 (admin) / --> 2 (client)
+
