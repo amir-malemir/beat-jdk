@@ -2,7 +2,6 @@ interface CheckRequest{
     public void customerApporval(int userRole, String status, int date, int today);
     public void managerApporval(int userRole, String status, int date, int today);
     public void database(int userRole, String status, int date);
-    public String expireChecker(int date, int today);
 }
 class RequestChecker implements CheckRequest{
     public void doProcess(int userRole, String status, int date, int today){
@@ -28,7 +27,7 @@ class RequestChecker implements CheckRequest{
                         case "1NOT_CONFIRM":
                             throw new RuntimeException("Expired");
                         case "1EXPIRED":
-                            System.out.println("expired, pls check date");
+                            throw new RuntimeException("Expired, pls check date");
                         case "1CONFIRM":
                             System.out.println(expireChecker(date, today));
                             break;
@@ -75,7 +74,7 @@ class Main{
     }
     public static void main(String[] args) {
         //   enum status : C -> "CONFIRM" / NC -> "NOT_CONFIRM" / E -> "EXPIRED" / R -> "REJECT"
-        status myStatus = status.NC;
+        status myStatus = status.C;
         //        userRole --> 1 (admin) / --> 2 (client)
         RequestChecker myRequest = new RequestChecker();
         myRequest.doProcess(1, myStatus.getStatusValue(), 50, 10);

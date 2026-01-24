@@ -1,14 +1,27 @@
 public class Train {
     public static void main(String[] args) {
-        PosNegZero(10);
+//        String inputWord = "A";
+//        convertToNatoWords(inputWord);
+        int dayNumber = 2;
+        System.out.print(daysOfWeek(dayNumber));
     }
-    public static void PosNegZero(int number){
-        if (number < 0) {
-            System.out.println("negative");
-        } else if (number > 0){
-            System.out.println("Positive");
-        } else {
-            System.out.println("Zero");
-        }
+//    public static void convertToNatoWords(String inputWord) {
+//        switch (inputWord) {
+//            case "A":
+//                System.out.println("Able");
+//                break;
+//            case "AB":
+//                System.out.println("Able Baker");
+//                break;
+//            default:
+//                System.out.println("Noting for show");
+//        }
+//    }
+    public static String daysOfWeek(int dayNumber) {
+        return switch (dayNumber){
+            case 0 -> "Saturday";
+            case 1 -> "sunday";
+            default -> "Not Found";
+        };
     }
 }
