@@ -32,6 +32,10 @@ public class AcountChallenge {
         customerEmail = email;
         customerPhone = phone;
     }
+    public AcountChallenge(String customerName, String customerEmail, String customerPhone){
+        this("0000", 99.99, customerName, customerEmail, customerPhone);
+        logger.info("third constructor with output");
+    }
 
 
     public void setNumber(String number) {
@@ -76,8 +80,13 @@ public class AcountChallenge {
     public static void main(String[] args){
 //        AcountChallenge amirAcc = new AcountChallenge("12345", 500.00, "amir", "amir@gmail.com", "09195456");
         AcountChallenge amirAcc = new AcountChallenge();
-        logger.info("constractor output: " + amirAcc.getNumber());
-        logger.info("constractor output2: " + amirAcc.getBalance());
+//        logger.info("constractor output: " + amirAcc.getNumber());
+//        logger.info("constractor output2: " + amirAcc.getBalance());
+
+        AcountChallenge platformTeam = new AcountChallenge("platfrom", "platfrom@gmail.com", "09121234567");
+        logger.warning("customerName: " + platformTeam.getCustomerName());
+        logger.warning("customerEmail: " + platformTeam.getCustomerEmail());
+        logger.warning("customerPhone: " + platformTeam.getCustomerPhone());
 //        amirAcc.withdraw(600);
 //        amirAcc.deposit(500);
     }
