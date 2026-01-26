@@ -26,7 +26,7 @@ public class AcountChallenge {
     }
     public AcountChallenge(String number, double balance, String  customerName, String email, String phone){
         logger.info("sec constructor wit output");
-        this.number = number;
+        setNumber(number);
         this.balance = balance;
         this.customerName = customerName;
         customerEmail = email;
