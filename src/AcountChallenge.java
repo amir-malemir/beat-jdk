@@ -84,6 +84,7 @@ public class AcountChallenge {
 //        logger.info("constractor output2: " + amirAcc.getBalance());
 
         AcountChallenge platformTeam = new AcountChallenge("platfrom", "platfrom@gmail.com", "09121234567");
+        logger.info("default number " + platformTeam.getNumber());
         logger.warning("customerName: " + platformTeam.getCustomerName());
         logger.warning("customerEmail: " + platformTeam.getCustomerEmail());
         logger.warning("customerPhone: " + platformTeam.getCustomerPhone());
