@@ -20,7 +20,12 @@ public class AcountChallenge {
             logger.info("Withdrawn "+amount);
         }
     }
+    public AcountChallenge(){
+        this("123456", 5.20, "defaultName", "defaultEmail", "defaultPhone");
+        logger.info("first constructor without output");
+    }
     public AcountChallenge(String number, double balance, String  customerName, String email, String phone){
+        logger.info("sec constructor wit output");
         this.number = number;
         this.balance = balance;
         this.customerName = customerName;
@@ -69,9 +74,10 @@ public class AcountChallenge {
         return customerPhone;
     }
     public static void main(String[] args){
-        AcountChallenge amiroAcc = new AcountChallenge("12345", 500.00, "amir", "amir@gmail.com", "09195456")
-//        AcountChallenge amirAcc = new AcountChallenge();
-        logger.info("constractor output: " + amiroAcc.getNumber());
+//        AcountChallenge amirAcc = new AcountChallenge("12345", 500.00, "amir", "amir@gmail.com", "09195456");
+        AcountChallenge amirAcc = new AcountChallenge();
+        logger.info("constractor output: " + amirAcc.getNumber());
+        logger.info("constractor output2: " + amirAcc.getBalance());
 //        amirAcc.withdraw(600);
 //        amirAcc.deposit(500);
     }
